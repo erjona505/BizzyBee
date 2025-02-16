@@ -1,0 +1,144 @@
+/* Full container for tindercard */
+.tindercard {
+    width: 100%;
+    height: 43.45rem;
+    display: flex;
+    background: rgb(240, 237, 215);
+    position: relative; /* Ensure content within it can be positioned normally */
+}
+
+/* Positioning the logo image */
+.tindercard img {
+    height: auto;
+    width: 7rem;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.card-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Business image styling */
+.card-body img {
+    position: absolute;
+    top: 4rem;  /* Adjusted to match previous position */
+    width: 35%; /* Set width to match previous layout */
+    height: auto;
+    border-radius: 8%;
+    margin-left: 33rem;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+/* Swipe left animation */
+.left {
+    transform: translateX(-100vw) rotate(-15deg);
+    opacity: 0;
+}
+
+/* Swipe right animation */
+.right {
+    transform: translateX(100vw) rotate(15deg);
+    opacity: 0;
+}
+
+/* Action buttons */
+.action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    font-size: 20px;
+    font-weight: 500;
+    position: absolute;
+    bottom: 2rem; /* Keep buttons positioned at the bottom */
+}
+
+/* Skip & Like buttons */
+.skip-button, .like-button {
+    padding: 15px 35px;
+    border-radius: 50px;
+    border: 2px solid black;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Skip Button Hover Effect */
+.skip-button:hover {
+    border-color: #ffffff;
+    background: darkred;
+    color: white;
+}
+
+/* Like Button Hover Effect */
+.like-button:hover {
+    border-color: #ffffff;
+    background: darkgreen;
+    color: white;
+}
+
+/*
+
+.card-body {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;     
+    width: 100%;
+    height: 100%;
+}
+
+
+.card-body img {
+    justify-content: center;
+    top: 4rem;
+    left: 33rem;
+    border-radius: 8%;
+    width: 35%; 
+    height: auto; 
+}
+.action {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.skip-button{
+    padding: 15px 35px;
+    border-radius: 50px;
+    border: 2px solid black;
+    cursor: pointer;
+    margin-top: 36rem;
+}
+.skip-button:hover{
+    border-color: #ffffff;
+    background: darkred;
+    cursor: pointer;
+    color: white;
+}
+.skip-button a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+.like-button{
+    padding: 15px 35px;
+    border-radius: 50px;
+    border: 2px solid black;
+    cursor: pointer;
+    margin-top: 36rem;
+}
+.like-button:hover{
+    border-color: #ffffff;
+    background: darkgreen;
+    cursor: pointer;
+    color: white;
+}
+.like-button a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}*/
