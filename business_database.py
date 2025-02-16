@@ -1,5 +1,5 @@
 import sqlite3  
-import os  
+import os  #import os to handle file paths
 
 #define fixed database location
 DB_DIR = os.path.join(os.path.expanduser("~"), "BizzyBee")
@@ -20,9 +20,9 @@ class Business:
     #function to add business details to the SQLite database
     def add_to_db(self): 
         conn = sqlite3.connect(DB_PATH)  #connect to the database
-        cursor = conn.cursor()
+        cursor = conn.cursor() #cursor created to execute SQL commands
         
-        #create "businesses" table to store info entered in the fields
+        #create table to store info entered in the fields
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS businesses (
                 id INTEGER PRIMARY KEY, 
@@ -42,7 +42,7 @@ class Business:
         conn.commit()  
         conn.close()  
 
-#function to allow user input and add a new business
+#prompts user for business info & stores them as variables
 def add_new_business():
     print("Enter your business details")
     name = input("Business Name: ")
@@ -50,9 +50,9 @@ def add_new_business():
     description = input("Description: ")
     niche = input("Business Niche (e.g., Food, Photography, Tech): ")
     
-    new_business = Business(name, owner, description, niche) #create new business object
+    new_business = Business(name, owner, description, niche) #create new business object with the entered info
     new_business.add_to_db()  #store business in the database
-    print(f"{name} has been added to the database!")
+    print(f"{name} has been added to the database.")
 
 #function to search for businesses based on category
 def search_businesses(category):
@@ -78,7 +78,7 @@ def display_businesses():
     if category.lower() == 'all':  
         category = '%' #retreive all businesses in the database
     
-    results = search_businesses(category)
+    results = search_businesses(category) #calls function to get matching businesses
     
     if results:
         print("\nMatching Businesses:")
@@ -102,11 +102,12 @@ def main():
         elif choice == "2":
             display_businesses()
         elif choice == "3":
-            print("Thank you!")
+            print("Thank you for using BizzyBee!")
             break
         else:
-            print("Invalid choice. Please try again.")
+            print("Invalid choice.")
 
 
 if __name__ == "__main__":
     main()
+
